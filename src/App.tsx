@@ -1,9 +1,14 @@
+import { Container, Footer, Header, VideoPlayer } from "./components";
+
 function App() {
   return (
-    <main>
-      <p className="text-3xl font-bold underline">Hello.</p>
-    </main>
-  )
+    <Container>
+      <Header />
+      <VideoPlayer />
+      <Footer />
+    </Container>
+  );
 }
 
-export default App
+export default App;
+
