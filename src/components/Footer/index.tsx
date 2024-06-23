@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <div className="w-full bg-gray-900 text-white py-4 flex justify-center items-center">
+    <div className="w-full bg-gray-950 text-white py-4 flex justify-center items-center">
       <p className="text-sm">
         &copy;
         {new Date().getFullYear() !== 2024
