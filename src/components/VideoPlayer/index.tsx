@@ -1,27 +1,41 @@
+import { useState } from "react";
+import { useVideoJS } from "../../hooks/useVideoJS";
+import ErrorBoundary from "../ErrorBoundary";
+import LiveStreamInput from "../LiveStreamInput";
+import React from "react";
+
 const VideoPlayer = () => {
+  const [source, setSource] = useState("");
+  const { VideoJS, player } = useVideoJS({
+    autoplay: true,
+    controls: true,
+    responsive: true,
+    fluid: true,
+    muted: true,
+    sources: [
+      {
+        src: source,
+        type: "application/x-mpegURL",
+      },
+    ],
+    children: ["MediaLoader"],
+  });
+
+  React.useEffect(() => {
+    player.current?.on("playing", () => {
+      console.log("reproduzindo...");
+    });
+  }, [player]);
+
+  const handlePlay = ({ url }: { url: string }) => {
+    setSource(url);
+  };
+
   return (
-    <div className="w-full flex justify-center">
-      <video
-        id="my-video"
-        className="video-js"
-        controls
-        preload="auto"
-        width="640"
-        height="264"
-        poster="MY_VIDEO_POSTER.jpg"
-        data-setup="{}"
-      >
-        <source src="MY_VIDEO.mp4" type="video/mp4" />
-        <source src="MY_VIDEO.webm" type="video/webm" />
-        <p className="vjs-no-js">
-          To view this video please enable JavaScript, and consider upgrading to
-          a web browser that
-          <a href="https://videojs.com/html5-video-support/" target="_blank">
-            supports HTML5 video
-          </a>
-        </p>
-      </video>
-    </div>
+    <ErrorBoundary>
+      {!source && <LiveStreamInput onSubmit={handlePlay} />}
+      {source && <VideoJS src={source} />}
+    </ErrorBoundary>
   );
 };
 export default VideoPlayer;
