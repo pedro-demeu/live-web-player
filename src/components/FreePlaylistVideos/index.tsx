@@ -48,7 +48,7 @@ const FreePlaylistVideos = () => {
         className="bg-blue-500 w-full text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none"
         onClick={handleOpenModal}
       >
-        Mostrar Playlists gratuitas para testar
+        Get Free Playlists
       </button>
       {showModal && (
         <div className="fixed inset-0 z-50 overflow-y-auto bg-black bg-opacity-50 flex items-center justify-center">
@@ -57,15 +57,15 @@ const FreePlaylistVideos = () => {
               className="absolute top-0 right-0 m-4 text-gray-500 hover:text-gray-700 focus:outline-none"
               onClick={handleCloseModal}
             >
-              Fechar
+              Close
             </button>
-            <h1 className="text-2xl font-bold mb-4">Lista de URLs de Vídeos</h1>
+            <h1 className="text-2xl font-bold mb-4">Free Playlists</h1>
             <p className="mb-4">{copyStatus}</p>
-            <ul className="space-y-2">
+            <ul className="space-y-2" style={{ maxHeight: 300, overflowY: 'scroll'}}>
               {videoUrls.map((url, index) => (
                 <li
                   key={index}
-                  className="bg-gray-950 p-2 rounded-lg flex justify-between items-center"
+                  className="bg-gray-950 p-2 rounded-lg flex justify-between items-center mr-2"
                 >
                   <span className="truncate text-white">{url}</span>
                   <button
@@ -73,7 +73,7 @@ const FreePlaylistVideos = () => {
                     className="ml-4 px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none"
                     onClick={() => handleCopy(url)}
                   >
-                    Copiar
+                    Copy
                   </button>
                 </li>
               ))}

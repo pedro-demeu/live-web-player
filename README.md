@@ -1,30 +1,46 @@
-# React + TypeScript + Vite
+## Video Player Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**This application is a simple video player built using React and Video.js, designed to play HLS streams.** 
+It allows users to input a video URL and start playing the video with basic controls.
 
-Currently, two official plugins are available:
+### Aparence
+  <img src="public/img01.png" >
+  <img src="public/img02.png" >
+  <img src="public/img03.png" >
+  <img src="public/img04.png" >
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Features
 
-## Expanding the ESLint configuration
+* **Video Player:** Utilizes Video.js for seamless playback of HLS streams.
+* **Error Handling:** Handles errors during video playback and retries if necessary.
+* **Responsive Design:** Supports responsive layouts for different screen sizes.
+* **Clipboard Copy:** Allows users to copy video URLs easily. (Consider adding a "Copy" icon here)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+---
 
-- Configure the top-level `parserOptions` property like this:
+### Installation
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+- Clone the repository.
+- Install dependencies with ``yarn install``.
+- Start the development server with ``yarn dev``.
+- Open http://localhost:3000 in your browser (edge recommended).
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+---
+
+### Usage
+
+``You can use Free Playlists available``
+- Enter a valid HLS video URL in the input field.
+- Click "Play" to start streaming the video.
+
+---
+
+**Technologies Used**
+* React
+* Video.js V8 (support HLS 😃)
+
+**Contributing**
+Contributions are welcome! Fork the repository and submit a pull request with your enhancements.
+
+**Observations**
+Some playlists may be publicly accessible and could be removed in the future. If any playlist fails to load, please try another or use your own m3u8 playlist.
