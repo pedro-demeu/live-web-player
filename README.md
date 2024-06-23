@@ -8,6 +8,7 @@ It allows users to input a video URL and start playing the video with basic cont
   <img src="public/img02.png" >
   <img src="public/img03.png" >
   <img src="public/img04.png" >
+  <img src="public/img05.png" >
 
 ### Features
 
